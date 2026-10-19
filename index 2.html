@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Grade 6 Math practice: converting units, dividing decimals and average speed.">
+<style>html{color-scheme:light dark}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Speed Check Rematch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: race-track classroom warm-up. Sticker-style cards with chunky edges; the lesson card takes the colour of the current part; team lanes are little roads along the bottom. */
+:root{
+  --bg:#E4F1FF; --dot:#BCD9FA; --surface:#FFFFFF; --ink:#1B1A45; --muted:#555887; --line:#C5CCF0; --edge:#1B1A45; --pop:#1B1A45;
+  --coral:#F0386B; --sky:#1479E6; --mint:#078A66; --lav:#7A3EF0; --gold:#FFB300;
+  --tint-coral:#FFE0E8; --tint-sky:#D6EBFF; --tint-mint:#CFF5E8; --tint-lav:#E7DBFF; --tint-gold:#FFEFB5;
+  --btn:#1B1A45; --btn-ink:#FFFFFF; --on-accent:#FFFFFF; --on-gold:#1B1A45;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif; --body:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17103A; --dot:#271C5C; --surface:#241B52; --ink:#F4F1FF; --muted:#B9B3E6; --line:#43388A; --edge:#0B0722; --pop:#0B0722;
+  --coral:#FF7A9C; --sky:#5CB0FF; --mint:#3DDBAF; --lav:#B08CFF; --gold:#FFCB47;
+  --tint-coral:#4A2144; --tint-sky:#1E3A6E; --tint-mint:#1A4A4F; --tint-lav:#3A2B78; --tint-gold:#4D3F1F;
+  --btn:#F4F1FF; --btn-ink:#17103A; --on-accent:#17103A; --on-gold:#17103A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17103A; --dot:#271C5C; --surface:#241B52; --ink:#F4F1FF; --muted:#B9B3E6; --line:#43388A; --edge:#0B0722; --pop:#0B0722;
+  --coral:#FF7A9C; --sky:#5CB0FF; --mint:#3DDBAF; --lav:#B08CFF; --gold:#FFCB47;
+  --tint-coral:#4A2144; --tint-sky:#1E3A6E; --tint-mint:#1A4A4F; --tint-lav:#3A2B78; --tint-gold:#4D3F1F;
+  --btn:#F4F1FF; --btn-ink:#17103A; --on-accent:#17103A; --on-gold:#17103A; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(var(--dot) 2.5px,transparent 3px);background-size:24px 24px;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.app{max-width:1280px;margin-inline:auto;padding-block:14px 26px;display:flex;flex-direction:column;gap:16px}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
+.brand{font-family:var(--display);font-weight:800;font-size:2.3rem;letter-spacing:.01em;line-height:1}
+.brand .w{display:inline-block;transform:rotate(-3deg)}
+.brand .w:nth-child(2){transform:rotate(2deg)}.brand .w:nth-child(3){transform:rotate(-2deg)}.brand .w:nth-child(4){transform:rotate(3deg)}
+.brand .b1{color:var(--coral)}.brand .b2{color:var(--sky)}.brand .b3{color:var(--mint)}.brand .b4{color:var(--lav)}
+.brand .sp{display:inline-block;width:.3em}
+.brand small{display:block;font-family:var(--body);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-family:inherit;cursor:pointer;border:2.5px solid var(--edge);background:var(--surface);border-radius:999px;padding:3px 12px;font-weight:700;font-size:.82rem;color:var(--muted);display:flex;gap:6px;align-items:center;box-shadow:0 3px 0 var(--pop)}
+.chip i{font-style:normal;font-variant-numeric:tabular-nums}
+.chip.active{color:var(--ink);transform:translateY(-2px)}
+.chip.c-intro.active{background:var(--gold);color:var(--on-gold)}
+.chip.c-r1.active{background:var(--mint);color:var(--on-accent)}
+.chip.c-r2.active{background:var(--sky);color:var(--on-accent)}
+.chip.c-ch.active{background:var(--coral);color:var(--on-accent)}
+.chip.c-avg.active,.chip.c-try.active{background:var(--lav);color:var(--on-accent)}
+.chip.done{opacity:.55}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:flex;border:2.5px solid var(--edge);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:0 3px 0 var(--pop)}
+.seg button{border:0;background:transparent;padding:5px 12px;font-weight:700}
+.seg button[aria-pressed="true"]{background:var(--btn);color:var(--btn-ink)}
+.tools label{font-size:.82rem;color:var(--muted);font-weight:700}
+details.how{position:relative}
+details.how summary{list-style:none;cursor:pointer;border:2.5px solid var(--edge);background:var(--surface);border-radius:12px;padding:5px 12px;font-weight:700;box-shadow:0 3px 0 var(--pop)}
+details.how summary::-webkit-details-marker{display:none}
+details.how .pop{position:absolute;right:0;top:calc(100% + 10px);z-index:5;width:min(360px,calc(100vw - 32px));background:var(--surface);border:3px solid var(--edge);border-radius:16px;padding:14px 16px;font-size:.92rem;box-shadow:0 6px 0 var(--pop)}
+.pop ol{margin:6px 0 0;padding-left:1.2rem;display:flex;flex-direction:column;gap:4px}
+.pop p{margin:0 0 4px}
+
+.stage{--sec:var(--gold);background:linear-gradient(to bottom,var(--sec) 0 14px,var(--surface) 14px);border:3px solid var(--edge);border-radius:22px;padding:30px 24px 20px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;box-shadow:0 7px 0 var(--pop)}
+.stage-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between;min-height:56px}
+.lvl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-family:var(--display);font-weight:800;font-size:1.15rem;padding:3px 16px;border-radius:999px;color:var(--on-accent);border:2.5px solid var(--edge);box-shadow:0 3px 0 var(--pop);transform:rotate(-1.5deg)}
+.badge.c-intro{background:var(--gold);color:var(--on-gold)}.badge.c-r1{background:var(--mint)}.badge.c-r2{background:var(--sky)}.badge.c-ch{background:var(--coral)}.badge.c-avg,.badge.c-try{background:var(--lav)}
+.worth{font-weight:700;color:var(--muted)}
+.worth b{color:var(--ink);font-variant-numeric:tabular-nums;background:var(--tint-gold);border-radius:8px;padding:0 8px}
+.timer{display:flex;align-items:center;gap:10px}
+.ring{position:relative;width:58px;height:58px}
+.ring svg{width:58px;height:58px;transform:rotate(-90deg)}
+.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--mint);transition:stroke-dashoffset .25s linear,stroke .25s}
+.ring.low .fg{stroke:var(--coral)}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.2rem;font-variant-numeric:tabular-nums}
+.btn{border:2.5px solid var(--edge);background:var(--surface);border-radius:12px;padding:7px 14px;font-weight:700;box-shadow:0 3px 0 var(--pop);transition:transform .08s,box-shadow .08s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(3px);box-shadow:0 0 0 var(--pop)}
+.btn.primary{background:var(--sec);color:var(--on-accent);font-family:var(--display);font-weight:800;font-size:1.2rem;padding:8px 24px;box-shadow:0 5px 0 var(--pop)}
+.stage[data-sec="intro"] .btn.primary{color:var(--on-gold)}
+.btn[disabled]{opacity:.45;cursor:default;box-shadow:none}
+
+.board{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:start;min-height:290px}
+@media (min-width:900px){.board{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}}
+.lead{display:flex;flex-direction:column;gap:12px}
+.lead h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5.4vw,4rem);line-height:1.02;text-wrap:balance}
+.lead .ask{font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2.4vw,1.8rem);color:var(--muted)}
+.lead .sub{color:var(--muted);font-size:1.1rem;font-weight:600;max-width:36ch}
+.prob{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5vw,3.6rem);line-height:1.08;text-wrap:balance}
+.prob em{font-style:normal;color:var(--sky);font-variant-numeric:tabular-nums}
+.tri{width:min(300px,100%);height:auto}
+.tri .ln{stroke:var(--edge);fill:var(--tint-gold);stroke-width:4;stroke-linejoin:round}
+.tri .dv{stroke:var(--edge);stroke-width:4}
+.tri .z1{fill:var(--tint-coral)}.tri .z2{fill:var(--tint-sky)}.tri .z3{fill:var(--tint-mint)}
+.tri text{font-family:var(--display);font-weight:800;font-size:32px;fill:var(--ink);text-anchor:middle}
+
+.rvs{display:flex;flex-direction:column;gap:11px}
+.rv{border:3px solid var(--edge);background:var(--tint-sky);border-radius:16px;padding:12px 16px;font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:600;animation:pop .35s cubic-bezier(.3,1.5,.5,1);box-shadow:0 4px 0 var(--pop)}
+.rv.good{background:var(--tint-mint)}
+.rv.bad{background:var(--tint-coral)}
+.rv.warn{background:var(--tint-gold)}
+.rv.lav{background:var(--tint-lav)}
+.rv b{font-family:var(--display);font-weight:800;font-size:1.18em;font-variant-numeric:tabular-nums}
+.rv .big{font-family:var(--display);font-weight:800;font-size:1.55em;font-variant-numeric:tabular-nums;display:block;line-height:1.15}
+.rv.good .big{color:var(--mint)}
+.rv.bad b{color:var(--coral)}
+.rv small{display:block;color:var(--muted);font-weight:600;font-size:.82em;margin-top:2px}
+.rv table{border-collapse:collapse;margin-top:4px;font-variant-numeric:tabular-nums}
+.rv td,.rv th{padding:3px 14px 3px 0;text-align:left;font-weight:700}
+.rv th{color:var(--muted);font-size:.8em;text-transform:uppercase;letter-spacing:.06em}
+@keyframes pop{0%{opacity:0;transform:translateY(10px) scale(.96)}100%{opacity:1;transform:none}}
+.waiting{border:3px dashed var(--line);border-radius:16px;padding:18px;color:var(--muted);font-weight:600}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.actions .keys{color:var(--muted);font-size:.82rem}
+kbd{font-family:var(--body);font-weight:700;border:1.5px solid var(--line);border-radius:6px;padding:0 6px;background:var(--bg)}
+
+.track{display:flex;flex-direction:column;gap:12px}
+.lane{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) auto;gap:10px 14px;align-items:center;background:var(--surface);border:3px solid var(--edge);border-radius:18px;padding:9px 14px;box-shadow:0 5px 0 var(--pop)}
+.lane .nm{width:100%;border:0;border-bottom:3px solid var(--line);background:transparent;font-family:var(--display);font-weight:800;font-size:1.35rem;padding:0 2px;border-radius:0;min-width:0}
+.lane .nm:focus{border-color:var(--sky);outline:none}
+.t0 .nm{color:var(--coral)}.t1 .nm{color:var(--sky)}.t2 .nm{color:var(--mint)}.t3 .nm{color:var(--lav)}
+.rail{position:relative;height:42px;border-radius:999px;background:var(--pop);border:3px solid var(--edge);overflow:hidden}
+.rail::before{content:"";position:absolute;left:14px;right:30px;top:50%;height:3px;margin-top:-1.5px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.5) 0 12px,transparent 12px 26px)}
+.rail::after{content:"";position:absolute;right:0;top:0;bottom:0;width:22px;background:repeating-conic-gradient(#1B1A45 0 25%,#fff 0 50%) 0 0/11px 11px}
+.fill{position:absolute;left:0;top:0;bottom:0;border-radius:999px;transition:width .6s cubic-bezier(.3,1.2,.4,1);opacity:.55}
+.mk{position:absolute;top:50%;width:38px;height:38px;margin-top:-19px;margin-left:-1px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.2rem;color:var(--on-accent);border:3px solid #fff;transition:left .6s cubic-bezier(.3,1.2,.4,1);box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.mk.bump{animation:bump .6s ease-out}
+@keyframes bump{0%{transform:scale(1)}30%{transform:scale(1.5) rotate(-12deg)}60%{transform:scale(.95)}100%{transform:scale(1)}}
+.t0 .fill,.t0 .mk{background:var(--coral)}.t1 .fill,.t1 .mk{background:var(--sky)}.t2 .fill,.t2 .mk{background:var(--mint)}.t3 .fill,.t3 .mk{background:var(--lav)}
+.pts{display:flex;align-items:center;gap:8px}
+.pts output{font-family:var(--display);font-weight:800;font-size:1.8rem;min-width:2.2ch;text-align:center;font-variant-numeric:tabular-nums}
+.pts button{width:40px;height:40px;border-radius:12px;border:2.5px solid var(--edge);background:var(--surface);font-weight:800;font-size:1.2rem;box-shadow:0 3px 0 var(--pop)}
+.pts button.add{background:var(--tint-mint)}
+.pts button:active{transform:translateY(3px);box-shadow:none}
+.pts button[disabled]{opacity:.4;cursor:default;box-shadow:none}
+
+.results{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;padding:10px 0}
+.results h2{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,6vw,4.2rem);margin:0;color:var(--coral)}
+.podium{display:flex;flex-direction:column;gap:8px;width:min(480px,100%)}
+.podium div{display:flex;justify-content:space-between;gap:12px;border:3px solid var(--edge);border-radius:14px;padding:8px 16px;font-weight:700;font-size:1.15rem;background:var(--surface);box-shadow:0 4px 0 var(--pop)}
+.podium div:first-child{background:var(--gold);color:var(--on-gold);font-size:1.3rem}
+.podium b{font-variant-numeric:tabular-nums}
+
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+.confetti i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
+
+@media (max-width:640px){
+  .lane{grid-template-columns:minmax(0,1fr) auto}
+  .lane .rail{grid-column:1 / -1;order:3}
+  .stage{padding:26px 14px 16px}
+  .brand{font-size:1.9rem}
+}
+@media (prefers-reduced-motion:reduce){.fill,.mk,.ring .fg{transition:none}.rv,.mk.bump,.confetti i{animation:none}.btn{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><span class="w b1">Speed</span><span class="sp"></span><span class="w b2">Check</span><span class="sp"></span><span class="w b3">Rematch</span><small>Convert · divide decimals · average speed</small></div>
+    <div class="chips" id="chips" aria-label="Progress by part"></div>
+    <div class="tools">
+      <label id="teamsLabel">Racers</label>
+      <div class="seg" role="group" aria-labelledby="teamsLabel" id="teamSeg">
+        <button type="button" data-n="2" aria-pressed="false">2</button>
+        <button type="button" data-n="3" aria-pressed="false">3</button>
+        <button type="button" data-n="4" aria-pressed="true">4</button>
+      </div>
+      <details class="how">
+        <summary>How to play</summary>
+        <div class="pop">
+          <p><b>Teach slides</b> have no points. Press <kbd>Space</kbd> to reveal one step at a time.</p>
+          <p style="margin-top:8px"><b>Question rounds:</b></p>
+          <ol>
+            <li>Read the problem. Everyone solves on a mini whiteboard.</li>
+            <li>Say “3-2-1” and show boards. Press <kbd>Space</kbd> to reveal the setup, then the answer.</li>
+            <li>Give points to racers who got it right (+ buttons or keys <kbd>1</kbd> to <kbd>4</kbd>).</li>
+            <li>The racer furthest along when time is up wins.</li>
+          </ol>
+          <p style="margin-top:8px"><b>Points:</b> Convert = 1. Divide: Level 1 = 1, Level 2 = 2, Level 3 = 3. Average speed: Level 1 = 2, Level 2 = 3. Click a chip at the top to jump to that part.</p>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="stage-head">
+      <div class="lvl"><span class="badge c-intro" id="badge">Intro</span><span id="levelName" class="worth"></span><span class="worth" id="worthWrap">Worth <b id="worth">1</b> <span id="worthWord">point</span></span></div>
+      <div class="timer" id="timerBox">
+        <div class="ring" id="ring" aria-hidden="true"><svg viewBox="0 0 54 54"><circle class="bg" cx="27" cy="27" r="23" fill="none" stroke-width="6"/><circle class="fg" id="ringFg" cx="27" cy="27" r="23" fill="none" stroke-width="6" stroke-linecap="round"/></svg><span id="ringText">30</span></div>
+        <button class="btn" id="timerBtn" type="button">Start timer <kbd>T</kbd></button>
+      </div>
+    </div>
+    <div class="board" id="board"></div>
+    <div class="actions">
+      <div class="keys"><kbd>Space</kbd> reveal &nbsp; <kbd>→</kbd> skip to next &nbsp; <kbd>←</kbd> back</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" id="backBtn" type="button">Back</button>
+        <button class="btn primary" id="goBtn" type="button">Start</button>
+      </div>
+    </div>
+  </main>
+
+  <section class="track" id="track" aria-label="Race track"></section>
+</div>
+
+<script>
+(function(){
+  var SEC={intro:{name:"Intro"},cv:{name:"Convert",sub:"Quick recap"},dv:{name:"Divide",sub:"Decimal ÷ decimal"},av:{name:"Average Speed",sub:"Whole numbers"}};
+  var VAR={intro:"--gold",cv:"--mint",dv:"--sky",av:"--lav"};
+  var CLS={intro:"c-intro",cv:"c-r1",dv:"c-r2",av:"c-avg"};
+  var ORDER=["intro","cv","dv","av"];
+  var ITEMS=[{"sec": "intro", "kind": "teach", "title": "Speed Check Rematch", "sub": "Three quick missions. Take your time and show every step.", "chunks": [{"label": "Next", "html": "<div class=\"rv warn\"><b>1.</b> Convert: km and m, minutes and hours</div>"}, {"label": "Next", "html": "<div class=\"rv lav\"><b>2.</b> Divide a decimal by a decimal, step by step</div>"}, {"label": "Next", "html": "<div class=\"rv good\"><b>3.</b> Average speed with whole numbers first</div>"}], "extra": ""}, {"sec": "cv", "kind": "teach", "title": "Metres and kilometres", "sub": "Same distance, different unit.", "chunks": [{"label": "Show the key fact", "html": "<div class=\"rv warn\"><span class=\"big\">1 km = 1000 m</span></div>"}, {"label": "Big unit to small unit", "html": "<div class=\"rv\">km to m: <b>multiply by 1000</b><small>3 km = 3 × 1000 = 3000 m</small></div>"}, {"label": "Small unit to big unit", "html": "<div class=\"rv lav\">m to km: <b>divide by 1000</b><small>2500 m = 2500 ÷ 1000 = 2.5 km</small></div>"}, {"label": "Shortcut", "html": "<div class=\"rv good\">Move the decimal point <b>3 places</b>. Right to multiply, left to divide.</div>"}], "extra": ""}, {"sec": "cv", "kind": "teach", "title": "Minutes and hours", "sub": "Speed in km/h needs time in hours.", "chunks": [{"label": "Show the key fact", "html": "<div class=\"rv warn\"><span class=\"big\">1 h = 60 min</span></div>"}, {"label": "Hours to minutes", "html": "<div class=\"rv\">h to min: <b>multiply by 60</b><small>2 h = 2 × 60 = 120 min</small></div>"}, {"label": "Minutes to hours", "html": "<div class=\"rv lav\">min to h: <b>divide by 60</b><small>90 min = 90 ÷ 60 = 1.5 h</small></div>"}, {"label": "Handy ones to remember", "html": "<div class=\"rv good\"><table><tr><th>Minutes</th><th>Hours</th></tr><tr><td>15 min</td><td>0.25 h</td></tr><tr><td>30 min</td><td>0.5 h</td></tr><tr><td>45 min</td><td>0.75 h</td></tr></table></div>"}], "extra": ""}, {"sec": "cv", "kind": "q", "lvl": "Convert it", "pts": 1, "secs": 20, "big": "4 km = ? m", "ask": "What is the missing number?", "chunks": [{"label": "Which way?", "html": "<div class=\"rv warn\">km to m: big to small, so <b>multiply by 1000</b></div>"}, {"label": "Do it", "html": "<div class=\"rv\"><b>4 × 1000</b></div>"}, {"label": "Show the answer", "html": "<div class=\"rv good\"><span class=\"big\">4 km = 4000 m</span></div>"}]}, {"sec": "cv", "kind": "q", "lvl": "Convert it", "pts": 1, "secs": 20, "big": "3500 m = ? km", "ask": "What is the missing number?", "chunks": [{"label": "Which way?", "html": "<div class=\"rv warn\">m to km: small to big, so <b>divide by 1000</b></div>"}, {"label": "Do it", "html": "<div class=\"rv\"><b>3500 ÷ 1000</b></div>"}, {"label": "Show the answer", "html": "<div class=\"rv good\"><span class=\"big\">3500 m = 3.5 km</span></div>"}]}, {"sec": "cv", "kind": "q", "lvl": "Convert it", "pts": 1, "secs": 20, "big": "2 h = ? min", "ask": "What is the missing number?", "chunks": [{"label": "Which way?", "html": "<div class=\"rv warn\">h to min: <b>multiply by 60</b></div>"}, {"label": "Do it", "html": "<div class=\"rv\"><b>2 × 60</b></div>"}, {"label": "Show the answer", "html": "<div class=\"rv good\"><span class=\"big\">2 h = 120 min</span></div>"}]}, {"sec": "cv", "kind": "q", "lvl": "Convert it", "pts": 1, "secs": 20, "big": "90 min = ? h", "ask": "What is the missing number?", "chunks": [{"label": "Which way?", "html": "<div class=\"rv warn\">min to h: <b>divide by 60</b></div>"}, {"label": "Do it", "html": "<div class=\"rv\"><b>90 ÷ 60<small>60 min is 1 h, and 30 min is half an hour.</small></b></div>"}, {"label": "Show the answer", "html": "<div class=\"rv good\"><span class=\"big\">90 min = 1.5 h</span></div>"}]}, {"sec": "cv", "kind": "q", "lvl": "Convert it", "pts": 1, "secs": 20, "big": "15 min = ? h", "ask": "What is the missing number?", "chunks": [{"label": "Which way?", "html": "<div class=\"rv warn\">min to h: <b>divide by 60</b></div>"}, {"label": "Do it", "html": "<div class=\"rv\"><b>15 ÷ 60<small>15 min is a quarter of an hour.</small></b></div>"}, {"label": "Show the answer", "html": "<div class=\"rv good\"><span class=\"big\">15 min = 0.25 h</span></div>"}]}, {"sec": "cv", "kind": "q", "lvl": "Convert it", "pts": 1, "secs": 20, "big": "2.5 km = ? m", "ask": "What is the missing number?", "chunks": [{"label": "Which way?", "html": "<div class=\"rv warn\">km to m: <b>multiply by 1000</b></div>"}, {"label": "Do it", "html": "<div class=\"rv\"><b>2.5 × 1000<small>Move the decimal point 3 places right.</small></b></div>"}, {"label": "Show the answer", "html": "<div class=\"rv good\"><span class=\"big\">2.5 km = 2500 m</span></div>"}]}, {"sec": "dv", "kind": "teach", "title": "Why we clear the decimal", "sub": "Multiply both numbers by the same amount and the answer stays the same.", "chunks": [{"label": "Look at this", "html": "<div class=\"rv\">6 ÷ 3 = <b>2</b></div>"}, {"label": "Multiply both by 10", "html": "<div class=\"rv lav\">60 ÷ 30 = <b>2</b></div>"}, {"label": "Multiply both by 100", "html": "<div class=\"rv lav\">600 ÷ 300 = <b>2</b></div>"}, {"label": "So what?", "html": "<div class=\"rv good\">We can turn a divisor with a decimal into a whole number without changing the answer.</div>"}], "extra": ""}, {"sec": "dv", "kind": "teach", "title": "The 4 steps", "sub": "Example: 8.4 ÷ 1.5", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">Look at the <b>divisor</b> (the number you divide by). 1.5 has <b>1</b> decimal place.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">1 place means ×10. 2 places means ×100.<br>8.4 × 10 = 84 and 1.5 × 10 = 15, so <b>84 ÷ 15</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">15 × 5 = 75, remainder 9. Bring a zero: 90 ÷ 15 = 6.<span class=\"big\">84 ÷ 15 = 5.6</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">Multiply back: 5.6 × 1.5 = <b>8.4</b>. It matches.</div>"}], "extra": ""}, {"sec": "dv", "kind": "q", "lvl": "Level 1 · whole-number answer", "pts": 1, "secs": 45, "big": "6.4 ÷ 0.8", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>0.8</b> has <b>1</b> decimal place. Multiply both by <b>10</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">6.4 × 10 = 64 and 0.8 × 10 = 8, so <b>64 ÷ 8</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">8 × 8 = 64<span class=\"big\">64 ÷ 8 = 8</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">8 × 0.8 = <b>6.4</b></div>"}]}, {"sec": "dv", "kind": "q", "lvl": "Level 1 · whole-number answer", "pts": 1, "secs": 45, "big": "4.5 ÷ 0.9", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>0.9</b> has <b>1</b> decimal place. Multiply both by <b>10</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">4.5 × 10 = 45 and 0.9 × 10 = 9, so <b>45 ÷ 9</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">9 × 5 = 45<span class=\"big\">45 ÷ 9 = 5</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">5 × 0.9 = <b>4.5</b></div>"}]}, {"sec": "dv", "kind": "q", "lvl": "Level 1 · whole-number answer", "pts": 1, "secs": 45, "big": "7.2 ÷ 1.2", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>1.2</b> has <b>1</b> decimal place. Multiply both by <b>10</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">7.2 × 10 = 72 and 1.2 × 10 = 12, so <b>72 ÷ 12</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">12 × 6 = 72<span class=\"big\">72 ÷ 12 = 6</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">6 × 1.2 = <b>7.2</b></div>"}]}, {"sec": "dv", "kind": "q", "lvl": "Level 2 · decimal answer", "pts": 2, "secs": 60, "big": "8.4 ÷ 1.5", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>1.5</b> has <b>1</b> decimal place. Multiply both by <b>10</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">8.4 × 10 = 84 and 1.5 × 10 = 15, so <b>84 ÷ 15</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">15 × 5 = 75, remainder 9. Bring a zero: 90 ÷ 15 = 6.<span class=\"big\">84 ÷ 15 = 5.6</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">5.6 × 1.5 = <b>8.4</b></div>"}]}, {"sec": "dv", "kind": "q", "lvl": "Level 2 · decimal answer", "pts": 2, "secs": 60, "big": "2.4 ÷ 0.5", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>0.5</b> has <b>1</b> decimal place. Multiply both by <b>10</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">2.4 × 10 = 24 and 0.5 × 10 = 5, so <b>24 ÷ 5</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">5 × 4 = 20, remainder 4. Bring a zero: 40 ÷ 5 = 8.<span class=\"big\">24 ÷ 5 = 4.8</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">4.8 × 0.5 = <b>2.4</b></div>"}]}, {"sec": "dv", "kind": "q", "lvl": "Level 2 · decimal answer", "pts": 2, "secs": 60, "big": "9.1 ÷ 1.4", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>1.4</b> has <b>1</b> decimal place. Multiply both by <b>10</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">9.1 × 10 = 91 and 1.4 × 10 = 14, so <b>91 ÷ 14</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">14 × 6 = 84, remainder 7. Bring a zero: 70 ÷ 14 = 5.<span class=\"big\">91 ÷ 14 = 6.5</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">6.5 × 1.4 = <b>9.1</b></div>"}]}, {"sec": "dv", "kind": "q", "lvl": "Level 3 · divisor with 2 places", "pts": 3, "secs": 75, "big": "1.8 ÷ 0.25", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>0.25</b> has <b>2</b> decimal places. Multiply both by <b>100</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">1.8 × 100 = 180 and 0.25 × 100 = 25, so <b>180 ÷ 25</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">25 × 7 = 175, remainder 5. Bring a zero: 50 ÷ 25 = 2.<span class=\"big\">180 ÷ 25 = 7.2</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">7.2 × 0.25 = <b>1.8</b></div>"}]}, {"sec": "dv", "kind": "q", "lvl": "Level 3 · divisor with 2 places", "pts": 3, "secs": 75, "big": "13.8 ÷ 0.75", "ask": "Clear the decimal, then divide.", "chunks": [{"label": "Step 1: Count the places", "html": "<div class=\"rv warn\">The divisor <b>0.75</b> has <b>2</b> decimal places. Multiply both by <b>100</b>.</div>"}, {"label": "Step 2: Multiply both", "html": "<div class=\"rv lav\">13.8 × 100 = 1380 and 0.75 × 100 = 75, so <b>1380 ÷ 75</b>.</div>"}, {"label": "Step 3: Divide the whole numbers", "html": "<div class=\"rv\">75 × 18 = 1350, remainder 30. Bring a zero: 300 ÷ 75 = 4.<span class=\"big\">1380 ÷ 75 = 18.4</span></div>"}, {"label": "Step 4: Check", "html": "<div class=\"rv good\">18.4 × 0.75 = <b>13.8</b></div>"}]}, {"sec": "av", "kind": "teach", "title": "Average speed", "sub": "Whole numbers first.", "chunks": [{"label": "Show the formula", "html": "<div class=\"rv\"><span class=\"big\">Average speed = Total distance ÷ Total time</span></div>"}, {"label": "Step 1", "html": "<div class=\"rv lav\">Add all the <b>distances</b>.</div>"}, {"label": "Step 2", "html": "<div class=\"rv lav\">Add all the <b>times</b>.</div>"}, {"label": "Step 3", "html": "<div class=\"rv good\">Divide the total distance by the total time.</div>"}, {"label": "Warning", "html": "<div class=\"rv bad\">Do <b>not</b> add the speeds and divide by 2.</div>"}], "extra": ""}, {"sec": "av", "kind": "teach", "title": "The trap", "sub": "A trip has two legs. Is the average 45 km/h?", "chunks": [{"label": "Show the trip", "html": "<div class=\"rv\"><table><tr><th>Leg</th><th>Distance</th><th>Time</th><th>Speed</th></tr><tr><td>1</td><td>60 km</td><td>2 h</td><td>30 km/h</td></tr><tr><td>2</td><td>60 km</td><td>1 h</td><td>60 km/h</td></tr></table></div>"}, {"label": "The tempting way", "html": "<div class=\"rv bad\">(30 + 60) ÷ 2 = <b>45 km/h</b><small>This is wrong.</small></div>"}, {"label": "The right way", "html": "<div class=\"rv good\">Total distance: 60 + 60 = <b>120 km</b><br>Total time: 2 + 1 = <b>3 h</b><span class=\"big\">120 ÷ 3 = 40 km/h</span></div>"}, {"label": "Why 40?", "html": "<div class=\"rv lav\">More <b>time</b> was spent going slowly, so the average is closer to the slow speed.</div>"}], "extra": ""}, {"sec": "av", "kind": "teach", "title": "When the speed is given", "sub": "Sometimes a leg gives speed and time, or speed and distance.", "chunks": [{"label": "Need a distance?", "html": "<div class=\"rv warn\"><span class=\"big\">Distance = Speed × Time</span><small>40 km/h for 2 h: 40 × 2 = 80 km</small></div>"}, {"label": "Need a time?", "html": "<div class=\"rv warn\"><span class=\"big\">Time = Distance ÷ Speed</span><small>60 km at 30 km/h: 60 ÷ 30 = 2 h</small></div>"}, {"label": "Then?", "html": "<div class=\"rv good\">Add the distances, add the times, and divide. Same 3 steps.</div>"}], "extra": ""}, {"sec": "av", "kind": "q", "lvl": "Level 1 · distance and time given", "pts": 2, "secs": 75, "big": "A bus travels 120 km in 3 hours, then 60 km in 1 hour.", "ask": "What is the average speed?", "chunks": [{"label": "Step 1: Add the distances", "html": "<div class=\"rv lav\">120 + 60 = <b>180 km</b></div>"}, {"label": "Step 2: Add the times", "html": "<div class=\"rv lav\">3 + 1 = <b>4 h</b></div>"}, {"label": "Step 3: Divide", "html": "<div class=\"rv good\"><span class=\"big\">180 ÷ 4 = 45 km/h</span></div>"}, {"label": "Trap check", "html": "<div class=\"rv bad\">The leg speeds are 40 and 60. Their plain average is 50. That is wrong.</div>"}]}, {"sec": "av", "kind": "q", "lvl": "Level 1 · distance and time given", "pts": 2, "secs": 75, "big": "A van drives 20 km in 1 hour, then 100 km in 4 hours.", "ask": "What is the average speed?", "chunks": [{"label": "Step 1: Add the distances", "html": "<div class=\"rv lav\">20 + 100 = <b>120 km</b></div>"}, {"label": "Step 2: Add the times", "html": "<div class=\"rv lav\">1 + 4 = <b>5 h</b></div>"}, {"label": "Step 3: Divide", "html": "<div class=\"rv good\"><span class=\"big\">120 ÷ 5 = 24 km/h</span></div>"}]}, {"sec": "av", "kind": "q", "lvl": "Level 1 · distance and time given", "pts": 2, "secs": 75, "big": "A cyclist rides 60 km in 3 hours, then 80 km in 1 hour.", "ask": "What is the average speed?", "chunks": [{"label": "Step 1: Add the distances", "html": "<div class=\"rv lav\">60 + 80 = <b>140 km</b></div>"}, {"label": "Step 2: Add the times", "html": "<div class=\"rv lav\">3 + 1 = <b>4 h</b></div>"}, {"label": "Step 3: Divide", "html": "<div class=\"rv good\"><span class=\"big\">140 ÷ 4 = 35 km/h</span></div>"}, {"label": "Trap check", "html": "<div class=\"rv bad\">The leg speeds are 20 and 80. Their plain average is 50. That is wrong.</div>"}]}, {"sec": "av", "kind": "q", "lvl": "Level 2 · speed given", "pts": 3, "secs": 90, "big": "A truck drives at 40 km/h for 2 hours, then at 60 km/h for 3 hours.", "ask": "What is the average speed?", "chunks": [{"label": "Find each distance", "html": "<div class=\"rv warn\">Distance = Speed × Time<br>Leg 1: 40 × 2 = <b>80 km</b><br>Leg 2: 60 × 3 = <b>180 km</b></div>"}, {"label": "Step 1: Add the distances", "html": "<div class=\"rv lav\">80 + 180 = <b>260 km</b></div>"}, {"label": "Step 2: Add the times", "html": "<div class=\"rv lav\">2 + 3 = <b>5 h</b></div>"}, {"label": "Step 3: Divide", "html": "<div class=\"rv good\"><span class=\"big\">260 ÷ 5 = 52 km/h</span></div>"}, {"label": "Trap check", "html": "<div class=\"rv bad\">The leg speeds are 40 and 60. Their plain average is 50. That is wrong.</div>"}]}, {"sec": "av", "kind": "q", "lvl": "Level 2 · speed given", "pts": 3, "secs": 90, "big": "A jeepney travels 60 km at 30 km/h, then 60 km at 60 km/h.", "ask": "What is the average speed?", "chunks": [{"label": "Find each time", "html": "<div class=\"rv warn\">Time = Distance ÷ Speed<br>Leg 1: 60 ÷ 30 = <b>2 h</b><br>Leg 2: 60 ÷ 60 = <b>1 h</b></div>"}, {"label": "Step 1: Add the distances", "html": "<div class=\"rv lav\">60 + 60 = <b>120 km</b></div>"}, {"label": "Step 2: Add the times", "html": "<div class=\"rv lav\">2 + 1 = <b>3 h</b></div>"}, {"label": "Step 3: Divide", "html": "<div class=\"rv good\"><span class=\"big\">120 ÷ 3 = 40 km/h</span></div>"}, {"label": "Trap check", "html": "<div class=\"rv bad\">The leg speeds are 30 and 60. Their plain average is 45. That is wrong.</div>"}]}];
+  var GOAL=ITEMS.reduce(function(s,i){return s+(i.kind==="q"?i.pts:0)},0);
+  var KEY="speed-check-rematch-v1";
+  var DEF=["Player 1","Player 2","Player 3","Player 4"];
+  var st={v:2,n:4,names:DEF.slice(),pts:[0,0,0,0],idx:0,stage:0};
+  function load(d){try{if(!d){var raw=localStorage.getItem(KEY);d=raw?JSON.parse(raw):null}}catch(e){d=null}
+    if(d&&typeof d==="object"&&d.v===2){if(d.n>=2&&d.n<=4)st.n=d.n;if(Array.isArray(d.names))st.names=d.names.slice(0,4);if(Array.isArray(d.pts))st.pts=d.pts.slice(0,4).map(function(x){return x|0});
+      if(typeof d.idx==="number")st.idx=Math.max(0,Math.min(ITEMS.length,d.idx));if(typeof d.stage==="number")st.stage=Math.max(0,d.stage|0)}
+    while(st.names.length<4)st.names.push(DEF[st.names.length]);while(st.pts.length<4)st.pts.push(0);
+    var it=ITEMS[st.idx];if(it&&st.stage>it.chunks.length)st.stage=it.chunks.length}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+  var $=function(id){return document.getElementById(id)};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+  function btnLabel(){
+    var it=ITEMS[st.idx];if(!it)return "Play again";
+    if(st.idx===0&&st.stage===0)return "Start";
+    if(st.stage<it.chunks.length)return it.chunks[st.stage].label;
+    return st.idx===ITEMS.length-1?"Finish line →":"Next →";
+  }
+
+  function renderChips(){
+    var html="",cur=ITEMS[st.idx];
+    ORDER.forEach(function(s){
+      var items=ITEMS.filter(function(i){return i.sec===s}),active=cur&&cur.sec===s;
+      var doneN=items.filter(function(i){return ITEMS.indexOf(i)<st.idx}).length;
+      html+='<button type="button" class="chip '+CLS[s]+(active?" active":"")+(doneN===items.length&&!active?" done":"")+'" data-sec="'+s+'" aria-label="Jump to '+SEC[s].name+'">'+SEC[s].name+' <i>'+doneN+'/'+items.length+'</i></button>';
+    });
+    $("chips").innerHTML=html;
+  }
+
+  function renderStage(){
+    var it=ITEMS[st.idx],board=$("board");
+    renderChips();
+    if(!it){
+      $("stage").style.setProperty("--sec","var(--coral)");$("stage").setAttribute("data-sec","end");$("badge").className="badge c-ch";$("badge").textContent="Finish line";$("levelName").textContent="";
+      $("worthWrap").hidden=false;$("worth").textContent=GOAL;$("worthWord").textContent="points available";$("timerBox").hidden=true;
+      var order=[];for(var i=0;i<st.n;i++)order.push({n:st.names[i]||DEF[i],p:st.pts[i]});
+      order.sort(function(a,b){return b.p-a.p});
+      var top=order[0].p,winners=order.filter(function(o){return o.p===top&&top>0});
+      board.innerHTML='<div class="results" style="grid-column:1/-1"><h2>'+(winners.length?(winners.length>1?"It is a tie":esc(winners[0].n)+" wins"):"Warm-up complete")+'</h2><div class="podium">'+order.map(function(o){return '<div><span>'+esc(o.n)+'</span><b>'+o.p+' pts</b></div>'}).join("")+'</div></div>';
+      $("goBtn").textContent="Play again";$("backBtn").disabled=false;setAwardState();return;
+    }
+    var S=SEC[it.sec],isQ=it.kind==="q";
+    $("stage").style.setProperty("--sec","var("+VAR[it.sec]+")");$("stage").setAttribute("data-sec",it.sec);
+    $("badge").className="badge "+CLS[it.sec];$("badge").textContent=S.name;$("levelName").textContent=it.lvl||S.sub||"";
+    $("worthWrap").hidden=!isQ;$("worth").textContent=it.pts||0;$("worthWord").textContent=it.pts===1?"point":"points";
+    $("timerBox").hidden=!isQ;
+    $("goBtn").textContent=btnLabel();$("backBtn").disabled=(st.idx===0&&st.stage===0);
+    var left;
+    if(isQ){left='<div class="lead"><div class="prob">'+it.big+'</div><div class="ask">'+it.ask+'</div></div>'}
+    else{left='<div class="lead"><h1>'+esc(it.title)+'</h1><div class="sub">'+esc(it.sub)+'</div>'+it.extra+'</div>'}
+    var shown=it.chunks.slice(0,st.stage).map(function(c){return c.html}).join("");
+    var right='<div class="rvs" aria-live="polite">'+(shown||'<div class="waiting">'+(isQ?"Everyone solves on their whiteboard. Press Space when ready to check.":"Press Space to begin.")+'</div>')+'</div>';
+    board.innerHTML=left+right;
+    if(isQ){var k=st.idx+":"+st.stage;if(k!==lastKey&&st.stage===0){resetTimer(it.secs)}lastKey=k}
+    setAwardState();
+  }
+  var lastKey="";
+
+  function confetti(){
+    if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+    var box=document.createElement("div");box.className="confetti";box.setAttribute("aria-hidden","true");
+    var cols=["--coral","--sky","--mint","--lav","--gold"];
+    for(var i=0;i<70;i++){var p=document.createElement("i");p.style.left=(Math.random()*100)+"%";p.style.background="var("+cols[i%5]+")";p.style.animationDuration=(2.2+Math.random()*2)+"s";p.style.animationDelay=(Math.random()*.8)+"s";box.appendChild(p)}
+    document.body.appendChild(box);setTimeout(function(){box.remove()},5500);
+  }
+  function advance(){
+    var it=ITEMS[st.idx];
+    if(!it){st.idx=0;st.stage=0;st.pts=[0,0,0,0];lastKey="";renderAll();save();return}
+    if(st.stage<it.chunks.length){st.stage++}else{st.idx++;st.stage=0}
+    renderAll();save();if(st.idx>=ITEMS.length&&st.stage===0)confetti();
+  }
+  function nextItem(){if(st.idx<ITEMS.length){st.idx++;st.stage=0;renderAll();save()}}
+  function back(){
+    if(st.stage>0){st.stage--}
+    else if(st.idx>0){st.idx--;st.stage=ITEMS[st.idx].chunks.length}
+    renderAll();save();
+  }
+
+  var total=30,left=30,tick=null,C=2*Math.PI*23;
+  $("ringFg").setAttribute("stroke-dasharray",C);
+  function drawTimer(){$("ringText").textContent=Math.max(0,Math.ceil(left));$("ringFg").setAttribute("stroke-dashoffset",C*(1-Math.max(0,left)/total));$("ring").classList.toggle("low",left<=10&&left>0||left<=0)}
+  function stopTimer(){if(tick){clearInterval(tick);tick=null}$("timerBtn").innerHTML="Start timer <kbd>T</kbd>"}
+  function resetTimer(s){stopTimer();total=s||30;left=total;drawTimer()}
+  function toggleTimer(){
+    var it=ITEMS[st.idx];if(!it||it.kind!=="q")return;
+    if(tick){stopTimer();return}
+    if(left<=0)left=total;
+    var last=performance.now();$("timerBtn").innerHTML="Pause <kbd>T</kbd>";
+    tick=setInterval(function(){var now=performance.now();left-=(now-last)/1000;last=now;if(left<=0){left=0;stopTimer();$("timerBtn").innerHTML="Restart <kbd>T</kbd>"}drawTimer()},100);
+  }
+
+  var tracked=false;
+  function initial(name,i){var n=(name||"").trim();if(!n||/^(team|player)\s*\d*$/i.test(n))return String(i+1);return n[0].toUpperCase()}
+  function renderTrack(){
+    var host=$("track");
+    if(!tracked||host.children.length!==st.n){
+      host.innerHTML="";
+      for(var i=0;i<st.n;i++){(function(i){
+        var d=document.createElement("div");d.className="lane t"+i;
+        d.innerHTML='<input class="nm" id="team'+i+'" type="text" maxlength="18" aria-label="Racer '+(i+1)+' name">'+
+          '<div class="rail"><div class="fill"></div><div class="mk"></div></div>'+
+          '<div class="pts"><button type="button" class="sub" aria-label="Remove a point">−</button><output></output><button type="button" class="add" aria-label="Add points">+</button></div>';
+        host.appendChild(d);
+        var inp=d.querySelector(".nm");inp.value=st.names[i]||DEF[i];
+        inp.addEventListener("input",function(){st.names[i]=inp.value;save();d.querySelector(".mk").textContent=initial(inp.value,i)});
+        d.querySelector(".add").addEventListener("click",function(){award(i,1)});
+        d.querySelector(".sub").addEventListener("click",function(){award(i,-1)});
+      })(i)}
+      tracked=true;
+    }
+    var lanes=host.children;
+    for(var j=0;j<lanes.length;j++){
+      var p=st.pts[j],pct=Math.max(0,Math.min(1,p/GOAL));
+      var fill=lanes[j].querySelector(".fill"),mk=lanes[j].querySelector(".mk"),out=lanes[j].querySelector("output");
+      fill.style.width="calc("+(pct*100)+"% - "+(pct*22)+"px + "+(pct>0?15:0)+"px)";
+      mk.style.left="calc("+(pct*100)+"% - "+(pct*34)+"px)";
+      mk.textContent=initial(st.names[j],j);out.textContent=p;
+    }
+    setAwardState();
+  }
+  function worthNow(){var it=ITEMS[st.idx];return it&&it.kind==="q"?it.pts:0}
+  function setAwardState(){
+    var off=worthNow()===0,b=document.querySelectorAll("#track .pts button");
+    for(var i=0;i<b.length;i++)b[i].disabled=off;
+  }
+  function award(i,dir){var w=worthNow();if(!w)return;st.pts[i]=Math.max(0,st.pts[i]+dir*w);renderTrack();save();
+    if(dir>0){var m=$("track").children[i]&&$("track").children[i].querySelector(".mk");if(m){m.classList.remove("bump");void m.offsetWidth;m.classList.add("bump")}}}
+  function renderAll(){renderStage();renderTrack();
+    var seg=document.querySelectorAll("#teamSeg button");for(var i=0;i<seg.length;i++)seg[i].setAttribute("aria-pressed",String(+seg[i].dataset.n===st.n))}
+
+  $("chips").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".chip");if(!b)return;var sec=b.getAttribute("data-sec");for(var i=0;i<ITEMS.length;i++){if(ITEMS[i].sec===sec){st.idx=i;st.stage=0;lastKey="";renderAll();save();break}}});
+  $("goBtn").addEventListener("click",advance);
+  $("backBtn").addEventListener("click",back);
+  $("timerBtn").addEventListener("click",toggleTimer);
+  document.querySelectorAll("#teamSeg button").forEach(function(b){b.addEventListener("click",function(){st.n=+b.dataset.n;tracked=false;renderAll();save()})});
+  document.addEventListener("keydown",function(e){
+    var t=e.target&&e.target.tagName;if(t==="INPUT"||t==="TEXTAREA"||e.metaKey||e.ctrlKey||e.altKey)return;
+    if(e.key===" "||e.key==="Enter"){if(t==="BUTTON"||t==="SUMMARY")return;e.preventDefault();advance()}
+    else if(e.key==="ArrowRight"){e.preventDefault();nextItem()}
+    else if(e.key==="ArrowLeft"){e.preventDefault();back()}
+    else if(e.key==="t"||e.key==="T"){toggleTimer()}
+    else if(/^[1-4]$/.test(e.key)){var i=+e.key-1;if(i<st.n)award(i,1)}
+    else if(e.shiftKey&&/^(!|@|#|\$)$/.test(e.key)){var m={"!":0,"@":1,"#":2,"$":3};if(m[e.key]<st.n)award(m[e.key],-1)}
+  });
+  function boot(){load(null);renderAll()}
+  boot();
+})();
+</script>
+
+</body>
+</html>
